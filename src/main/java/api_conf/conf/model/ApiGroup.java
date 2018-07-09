@@ -10,12 +10,19 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 @Entity
 @Table(name="api_group")
+@DatabaseTable(tableName = "api_group")
 public class ApiGroup {
+	
+	@DatabaseField(id = true)
 	private Integer id;
 	@NotNull
 	@Size(min=1, max=32, message="Group name must be between 1 and 32 characters")
+	@DatabaseField
 	private String name;
 	
 	public ApiGroup() {

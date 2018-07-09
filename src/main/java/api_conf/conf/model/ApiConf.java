@@ -8,18 +8,30 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 @Entity
 @Table(name="api_conf")
+@DatabaseTable(tableName = "api_conf")
 public class ApiConf {
-	
+	@DatabaseField(id = true)
 	private Integer id;
+	@DatabaseField
 	private String paramName;
+	@DatabaseField
 	private String paramValue;
+	@DatabaseField
 	private String paramType;
+	@DatabaseField
 	private String paramKey;
+	@DatabaseField
 	private boolean modifiable;
+	@DatabaseField
 	private boolean added;
+	@DatabaseField
 	private String paramCategory;
+	@DatabaseField
 	private String description;
 	
 	

@@ -12,15 +12,26 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 @Entity
 @Table(name="api_group_perm")
+@DatabaseTable(tableName = "api_group_perm")
 public class ApiGroupPerm {
+	@DatabaseField(id = true)
 	private Integer id;
+	@DatabaseField(foreign = true)
 	private ApiBean apiBean;
+	@DatabaseField(foreign = true)
 	private ApiGroup apiGroup;
+	@DatabaseField
 	private Boolean selection;
+	@DatabaseField
 	private Boolean deletion;
+	@DatabaseField
 	private Boolean updating;
+	@DatabaseField
 	private Boolean creation;
 	
 	public ApiGroupPerm() {

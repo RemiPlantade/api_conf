@@ -19,29 +19,33 @@ import javax.validation.constraints.Size;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 @Entity
 @Table(name="api_user")
+@DatabaseTable(tableName = "api_user")
 public class ApiUser {
-	
+	@DatabaseField(id = true)
 	private  Integer id;
-	
+	@DatabaseField
 	@NotNull
 	@Size(min=1, max=32, message="Must be between 1 and 32 characters")
 	private String username;
-	
+	@DatabaseField
 	@NotNull
 	@Pattern(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", message="Email address is invalid")
 	private String mail;
-	
+	@DatabaseField
 	private String token;
-	
+	@DatabaseField
 	@Min(value=0, message="Minimum value : 0")
 	@Max(value=999999999,message="Maximum value : 999999999")
 	private Long maxquota = 0L;
-	
+	@DatabaseField
 	@Min(value=0, message="Minimum value : 0")
 	private Long actualquota = 0L;
-	
+	@DatabaseField(foreign = true)
 	@NotNull(message="You must select a group")
 	private ApiGroup group;
 

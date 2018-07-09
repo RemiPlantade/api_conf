@@ -8,12 +8,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 @Entity
 @Table(name="api_bean")
+@DatabaseTable(tableName = "api_bean")
 public class ApiBean {
-	
+	@DatabaseField(id = true)
 	private Integer id;
+	@DatabaseField
 	private String name;
+	@DatabaseField
 	private Boolean managed;
 	
 	
