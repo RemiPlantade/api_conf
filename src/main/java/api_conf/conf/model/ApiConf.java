@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -21,16 +22,16 @@ public class ApiConf {
 	private String paramName;
 	@DatabaseField
 	private String paramValue;
-	@DatabaseField
-	private String paramType;
+	@DatabaseField(dataType=DataType.ENUM_STRING)
+	private ApiParamType paramType;
 	@DatabaseField
 	private String paramKey;
 	@DatabaseField
 	private boolean modifiable;
 	@DatabaseField
 	private boolean added;
-	@DatabaseField
-	private String paramCategory;
+	@DatabaseField(dataType=DataType.ENUM_STRING)
+	private ApiParamCat paramCategory;
 	@DatabaseField
 	private String description;
 	
@@ -65,11 +66,11 @@ public class ApiConf {
 		this.paramValue = paramValue;
 	}
 	@Column(name="param_type", length=45)
-	public String getParamType() {
+	public ApiParamType getParamType() {
 		return paramType;
 	}
 
-	public void setParamType(String paramType) {
+	public void setParamType(ApiParamType paramType) {
 		this.paramType = paramType;
 	}
 
@@ -96,12 +97,12 @@ public class ApiConf {
 
 
 	@Column(name="param_category")
-	public String getParamCategory() {
+	public ApiParamCat getParamCategory() {
 		return paramCategory;
 	}
 
 
-	public void setParamCategory(String paramCategory) {
+	public void setParamCategory(ApiParamCat paramCategory) {
 		this.paramCategory = paramCategory;
 	}
 	
