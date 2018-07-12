@@ -21,9 +21,9 @@ import com.j256.ormlite.table.DatabaseTable;
 public class ApiUserPerm {
 	@DatabaseField(id = true)
 	private Integer id;
-	@DatabaseField(foreign = true)
+	@DatabaseField(foreign = true,columnName="api_bean")
 	private ApiBean apiBean;
-	@DatabaseField(foreign = true)
+	@DatabaseField(foreign = true,columnName="api_user")
 	private ApiUser apiUser;
 	@DatabaseField
 	private Boolean selection;

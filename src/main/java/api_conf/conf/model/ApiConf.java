@@ -18,19 +18,19 @@ import com.j256.ormlite.table.DatabaseTable;
 public class ApiConf {
 	@DatabaseField(id = true)
 	private Integer id;
-	@DatabaseField
+	@DatabaseField(columnName = "param_name")
 	private String paramName;
-	@DatabaseField
+	@DatabaseField(columnName = "param_value")
 	private String paramValue;
-	@DatabaseField(dataType=DataType.ENUM_STRING)
+	@DatabaseField(dataType=DataType.ENUM_STRING,columnName = "param_type")
 	private ApiParamType paramType;
-	@DatabaseField
+	@DatabaseField(columnName = "param_key")
 	private String paramKey;
 	@DatabaseField
 	private boolean modifiable;
 	@DatabaseField
 	private boolean added;
-	@DatabaseField(dataType=DataType.ENUM_STRING)
+	@DatabaseField(dataType=DataType.ENUM_STRING,columnName = "param_category")
 	private ApiParamCat paramCategory;
 	@DatabaseField
 	private String description;

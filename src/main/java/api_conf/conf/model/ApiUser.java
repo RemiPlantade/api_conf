@@ -45,7 +45,7 @@ public class ApiUser {
 	@DatabaseField
 	@Min(value=0, message="Minimum value : 0")
 	private Long actualquota = 0L;
-	@DatabaseField(foreign = true)
+	@DatabaseField(foreign = true,columnName="actquota")
 	@NotNull(message="You must select a group")
 	private ApiGroup group;
 

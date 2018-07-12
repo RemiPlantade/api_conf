@@ -21,9 +21,9 @@ import com.j256.ormlite.table.DatabaseTable;
 public class ApiGroupPerm {
 	@DatabaseField(id = true)
 	private Integer id;
-	@DatabaseField(foreign = true)
+	@DatabaseField(foreign = true,columnName="api_bean")
 	private ApiBean apiBean;
-	@DatabaseField(foreign = true)
+	@DatabaseField(foreign = true,columnName="api_group")
 	private ApiGroup apiGroup;
 	@DatabaseField
 	private Boolean selection;
