@@ -22,7 +22,7 @@ public class ApiConf {
 	private String paramName;
 	@DatabaseField(columnName = "param_value")
 	private String paramValue;
-	@DatabaseField(dataType=DataType.ENUM_STRING,columnName = "param_type")
+	@DatabaseField(dataType=DataType.ENUM_INTEGER,columnName = "param_type")
 	private ApiParamType paramType;
 	@DatabaseField(columnName = "param_key")
 	private String paramKey;
@@ -30,7 +30,7 @@ public class ApiConf {
 	private boolean modifiable;
 	@DatabaseField
 	private boolean added;
-	@DatabaseField(dataType=DataType.ENUM_STRING,columnName = "param_category")
+	@DatabaseField(dataType=DataType.ENUM_INTEGER,columnName = "param_category")
 	private ApiParamCat paramCategory;
 	@DatabaseField
 	private String description;
