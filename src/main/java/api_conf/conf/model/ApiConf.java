@@ -22,16 +22,16 @@ public class ApiConf {
 	private String paramName;
 	@DatabaseField(columnName = "param_value")
 	private String paramValue;
-	@DatabaseField(dataType=DataType.ENUM_INTEGER,columnName = "param_type")
-	private ApiParamType paramType;
+	@DatabaseField(columnName = "param_type")
+	private String paramType;
 	@DatabaseField(columnName = "param_key")
 	private String paramKey;
 	@DatabaseField
 	private boolean modifiable;
 	@DatabaseField
 	private boolean added;
-	@DatabaseField(dataType=DataType.ENUM_INTEGER,columnName = "param_category")
-	private ApiParamCat paramCategory;
+	@DatabaseField(columnName = "param_category")
+	private String paramCategory;
 	@DatabaseField
 	private String description;
 	
@@ -66,11 +66,11 @@ public class ApiConf {
 		this.paramValue = paramValue;
 	}
 	@Column(name="param_type", length=45)
-	public ApiParamType getParamType() {
+	public String getParamType() {
 		return paramType;
 	}
 
-	public void setParamType(ApiParamType paramType) {
+	public void setParamType(String paramType) {
 		this.paramType = paramType;
 	}
 
@@ -97,12 +97,12 @@ public class ApiConf {
 
 
 	@Column(name="param_category")
-	public ApiParamCat getParamCategory() {
+	public String getParamCategory() {
 		return paramCategory;
 	}
 
 
-	public void setParamCategory(ApiParamCat paramCategory) {
+	public void setParamCategory(String paramCategory) {
 		this.paramCategory = paramCategory;
 	}
 	

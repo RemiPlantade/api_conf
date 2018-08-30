@@ -21,8 +21,11 @@ public class ApiBean {
 	private String name;
 	@DatabaseField
 	private Boolean managed;
-	
-	
+	@DatabaseField(columnName = "url_bean_name")
+	private String urlBeanName;
+	@DatabaseField(columnName = "bean_url")
+	private String beanUrl;
+
 	public ApiBean() {
 		super();
 	}
@@ -55,6 +58,21 @@ public class ApiBean {
 	public void setManaged(Boolean managed) {
 		this.managed = managed;
 	}
-	
+	@Column(name="url_bean_name", length=200)
+	public String getUrlBeanName() {
+		return urlBeanName;
+	}
+
+	public void setUrlBeanName(String urlBeanName) {
+		this.urlBeanName = urlBeanName;
+	}
+	@Column(name="bean_url", length=255)
+	public String getBeanUrl() {
+		return beanUrl;
+	}
+
+	public void setBeanUrl(String beanUrl) {
+		this.beanUrl = beanUrl;
+	}
 	
 }
